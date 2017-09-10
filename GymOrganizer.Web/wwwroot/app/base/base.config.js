@@ -5,8 +5,8 @@
         .module('app')
         .config(routeConfig);
 
-    routeConfig.$inject = ['$stateProvider'];
-    function routeConfig($stateProvider) {
+    routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function routeConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('base', {
                 url: '/',
@@ -14,5 +14,8 @@
                 controller: 'BaseCtrl',
                 controllerAs: 'vm'
             });       
+
+        $urlRouterProvider.otherwise('/home');
+
     }
 })();
