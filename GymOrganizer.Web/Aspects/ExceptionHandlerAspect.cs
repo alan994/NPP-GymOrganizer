@@ -15,10 +15,10 @@ namespace GymOrganizer.Web.Aspects
     [PSerializable]
     public class ExceptionHandlerAspect : OnExceptionAspect
     {
-        
+
         public override void OnException(MethodExecutionArgs args)
         {
-            if(args.Instance != null)
+            if (args.Instance != null)
             {
                 var logger = (args.Instance as BaseController).GetLogger<ExceptionHandlerAspect>();
                 logger.LogInformation($"Alan - Exception handled {args.Exception.Message}");
