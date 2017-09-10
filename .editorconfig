@@ -1,0 +1,22 @@
+[*]
+end_of_line = crlf
+
+[*.xml]
+indent_style = space
+
+# Dotnet Code Style Settings
+# See https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+# See http://kent-boogaart.com/blog/editorconfig-reference-for-c-developers
+[*.{cs,csx,cake,vb}]
+dotnet_sort_system_directives_first = true:warning
+dotnet_style_coalesce_expression = true:warning
+dotnet_style_collection_initializer = true:warning
+dotnet_style_explicit_tuple_names = true:warning
+dotnet_style_null_propagation = true:warning
+dotnet_style_object_initializer = true:warning
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+dotnet_style_qualification_for_event = true:warning
+dotnet_style_qualification_for_field = true:warning
+dotnet_style_qualification_for_method = true:warning
+dotnet_style_qualification_for_property = true:warning
