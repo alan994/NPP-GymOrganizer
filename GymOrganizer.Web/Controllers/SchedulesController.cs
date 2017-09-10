@@ -27,6 +27,13 @@ namespace GymOrganizer.Web.Controllers
             return Json(await this.scheduleService.GetAllSchedules());
         }
 
+        [HttpGet("upcoming")]
+        [ExceptionHandlerAspect()]
+        public async Task<IActionResult> GetUpcoming()
+        {
+            return Json(await this.scheduleService.GetAllUpcomingSchedules());
+        }
+
         [HttpGet("{id}")]
         [ExceptionHandlerAspect()]
         public async Task<IActionResult> GetById(Guid id)

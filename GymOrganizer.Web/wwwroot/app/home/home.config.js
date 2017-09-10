@@ -13,7 +13,12 @@
                 url: 'home',
                 templateUrl: 'app/home/home.html',
                 controller: 'HomeCtrl',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                resolve: {
+                    schedules: ['schedulesRepository', function (schedulesRepository) {
+                        return schedulesRepository.getUpcomingSchedules();
+                    }]
+                }
             });
     }
 })();

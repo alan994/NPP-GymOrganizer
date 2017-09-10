@@ -44,6 +44,16 @@ namespace GymOrganizer.Web.Services
             await this.db.SaveChangesAsync();
         }
 
+        public async Task<List<ScheduleVM>> GetAllUpcomingSchedules()
+        {
+            return await this.db.Schedules
+                .Include(x => x.User)
+                .Where(x => x.Date > DateTime.UtcNow)
+                .OrderBy(x => x.Date)
+                .Select(x => Mapper.Map<ScheduleVM>(x))
+                .ToListAsync();
+        }
+
         public async Task EditSchedule(ScheduleVM scheduleModel)
         {
             var oldSchedule = await this.db.Schedules.Where(x => x.Id == scheduleModel.Id).FirstOrDefaultAsync();

@@ -5,11 +5,13 @@
         .module('app')
         .controller('HomeCtrl', homeCtrl);
 
-    homeCtrl.$inject = ['$location'];
+    homeCtrl.$inject = ['schedules'];
 
-    function homeCtrl($location) {
+    function homeCtrl(schedules) {
         var vm = this;
-        vm.title = "Home"
+        vm.formData = {
+            schedules: schedules
+        };
                 
     }
 })();

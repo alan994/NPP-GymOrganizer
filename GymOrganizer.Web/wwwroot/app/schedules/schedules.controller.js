@@ -5,15 +5,12 @@
         .module('app')
         .controller('SchedulesCtrl', schedulesCtrl);
 
-    schedulesCtrl.$inject = ['$location'];
+    schedulesCtrl.$inject = ['schedules'];
 
-    function schedulesCtrl($location) {
-        /* jshint validthis:true */
+    function schedulesCtrl(schedules) {        
         var vm = this;
-        vm.title = 'schedules';
-
-        activate();
-
-        function activate() { }
+        vm.formData = {
+            schedules: schedules
+        };
     }
 })();

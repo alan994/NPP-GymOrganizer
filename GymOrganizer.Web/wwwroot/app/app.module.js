@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('app', [
+        'ngSanitize',
         'ui.bootstrap',
-        'ui.router'
+        'ui.router',
+        'ui.select'
     ]);
 })();

@@ -1,1 +1,8 @@
-﻿{{vm.title}}
+﻿<div class="panel panel-default" ng-repeat="schedule in vm.formData.schedules">
+    <div class="panel-body">
+        <h4>{{schedule.date | date:'short'}}</h4>
+        <p>{{schedule.description}}</p>
+        <hr />
+        <span>{{schedule.user.firstName}} {{schedule.user.lastName}}</span>
+    </div>
+</div>

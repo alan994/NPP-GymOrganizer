@@ -13,7 +13,8 @@
             getUserById: getUserById,
             addUser: addUser,
             editUser: editUser,
-            deleteUser: deleteUser
+            deleteUser: deleteUser,
+            getAllCoaches: getAllCoaches
         };
 
         return service;
@@ -59,6 +60,19 @@
             }, function (data, status, headers, config) {
                 if (data) { return $q.reject({ exception: data.data, status: data.status }); } else { return $q.reject(); }
             })
+        }
+
+        function getAllCoaches() {
+            return getUsers().then(function (data) {
+                angular.forEach(data, function (user, index) {
+                    if (user.type == 1) {
+                        data.splice(index, 1);
+                    }
+                });
+                return data;
+            }, function (error) {
+                $q.reject(error);
+            });
         }
     }
 })();
