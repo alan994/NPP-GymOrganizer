@@ -5,6 +5,7 @@ using GymOrganizer.Web.Aspects;
 using Microsoft.Extensions.Logging;
 using GymOrganizer.Web.Services;
 using GymOrganizer.Web.ViewModels;
+using System.Collections.Generic;
 
 namespace GymOrganizer.Web.Controllers
 {
@@ -22,16 +23,16 @@ namespace GymOrganizer.Web.Controllers
 
         [HttpGet]
         [ExceptionHandlerAspect()]
-        public async Task<IActionResult> Get()
+        public async Task<List<UserVM>> Get()
         {
-            return Json(await this.userService.GetAllUsers());
+            return await this.userService.GetAllUsers();
         }
 
         [HttpGet("{id}")]
         [ExceptionHandlerAspect()]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<UserVM> GetById(Guid id)
         {
-            return Json(await this.userService.GetUserById(id));
+            return await this.userService.GetUserById(id);
         }
 
         
@@ -40,8 +41,7 @@ namespace GymOrganizer.Web.Controllers
         public async Task<IActionResult> Post([FromBody]UserVM user)
         {
             await this.userService.AddUser(user);
-            return Ok();
-            
+            return Ok();            
         }
 
         
