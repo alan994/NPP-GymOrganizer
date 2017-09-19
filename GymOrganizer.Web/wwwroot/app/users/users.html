@@ -1,0 +1,38 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <td>Ime</td>
+                    <td>Prezime</td>
+                    <td>Email</td>
+                    <td>Kontakt broj</td>
+                    <td>Tip</td>
+                    <td>Akcije</td>
+                </tr>
+            </thead>
+            <tr ng-repeat="user in vm.formData.users">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phoneNumber}}</td>
+                <td>{{user.type | userType}}</td>
+                <td>
+                    <a ui-sref=".edit({userId: '{{user.id}}'})">Uredi</a>
+                    <a ui-sref=".delete({userId: '{{user.id}}', fullName: '{{user.firstName}}'  + ' ' + '{{user.lastName}}'})">Obriši</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <button class="btn btn-default"
+                ui-sref=".add">
+            Dodaj
+        </button>
+    </div>
+</div>
+
+<div ui-view></div>

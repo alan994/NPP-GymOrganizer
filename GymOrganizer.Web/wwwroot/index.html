@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gym organizer</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/angular-ui-select/dist/select.min.css" rel="stylesheet" />
+</head>
+<body ng-app="app">
+
+    <div ui-view></div>
+
+    <!--Libraries-->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/angular-i18n/angular-locale_hr.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular-ui-select/dist/select.min.js"></script>
+    
+    <!--Application files-->    
+    <script src="app/app.module.js"></script>
+    
+    <!--Base-->
+    <script src="app/base/base.config.js"></script>
+    <script src="app/base/base.controller.js"></script>
+    
+    <!--Home-->
+    <script src="app/home/home.config.js"></script>
+    <script src="app/home/home.controller.js"></script>
+
+    <!--Users-->
+    <script src="app/users/users.config.js"></script>
+    <script src="app/users/users.controller.js"></script>
+    <script src="app/users/delete/delete.controller.js"></script>
+    <script src="app/users/edit/edit.controller.js"></script>
+    
+    <!--Schedules-->
+    <script src="app/schedules/schedules.config.js"></script>
+    <script src="app/schedules/schedules.controller.js"></script>
+    <script src="app/schedules/edit/edit.controller.js"></script>
+    <script src="app/schedules/delete/delete.controller.js"></script>
+    
+    <!--Data-->
+    <script src="app/data/schedules.factory.js"></script>
+    <script src="app/data/users.factory.js"></script>
+    
+    <!--Filters-->
+    <script src="app/filters/userType.filter.js"></script>
+
+    <!--Helpers-->
+    <script src="helper/dateHelper.factory.js"></script>
+    <!-- inject:js -->
+
+    <!--endinject-->
+</body>
+</html>
